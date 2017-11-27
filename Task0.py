@@ -1,7 +1,7 @@
 #-*- coding:utf-8 -*- 
 """
-下面的文件将会从csv文件中读取读取短信与电话记录，
-你将在以后的课程中了解更多有关读取文件的知识。
+ä¸‹é�¢çš„æ–‡ä»¶å°†ä¼šä»Žcsvæ–‡ä»¶ä¸­è¯»å�–è¯»å�–çŸ­ä¿¡ä¸Žç”µè¯�è®°å½•ï¼Œ
+ä½ å°†åœ¨ä»¥å�Žçš„è¯¾ç¨‹ä¸­äº†è§£æ›´å¤šæœ‰å…³è¯»å�–æ–‡ä»¶çš„çŸ¥è¯†ã€‚
 """
 import csv
 with open('texts.csv', 'r') as f:
@@ -14,13 +14,13 @@ with open('calls.csv', 'r') as f:
 
 
 """
-任务0:
-短信记录的第一条记录是什么？通话记录最后一条记录是什么？
-输出信息:
+ä»»åŠ¡0:
+çŸ­ä¿¡è®°å½•çš„ç¬¬ä¸€æ�¡è®°å½•æ˜¯ä»€ä¹ˆï¼Ÿé€šè¯�è®°å½•æœ€å�Žä¸€æ�¡è®°å½•æ˜¯ä»€ä¹ˆï¼Ÿ
+è¾“å‡ºä¿¡æ�¯:
 "First record of texts, <incoming number> texts <answering number> at time <time>"
 "Last record of calls, <incoming number> calls <answering number> at time <time>, lasting <during> seconds"
 """
 
 #Task 0
-print texts[0]
-print calls[0]
+print "First record of texts, {} texts {} at time {}".format(texts[0][0], texts[0][1], texts[0][2])
+print "Last record of calls, {} calls {} at time {}, lasting {} seconds".format(calls[-1][0], calls[-1][1], calls[-1][2], calls[-1][3])
