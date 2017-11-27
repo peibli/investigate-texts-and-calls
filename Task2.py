@@ -36,24 +36,24 @@ def collect_phone_number(input):
     for element in input:
         if (element[0] in phone_num):
             phone_num[element[0]] += int(element[3])
-        elif (element[1] in phone_num):
-            phone_num[element[1]] += int(element[3])
         else:
             phone_num[element[0]] = int(element[3])
-            #print "element is {}, and call duration is {}".format(element[0], element[3])
+        if (element[1] in phone_num):
+            phone_num[element[1]] += int(element[3])
+        else:
             phone_num[element[1]] = int(element[3])
             #print "element is {}, and call duration is {}".format(element[1], element[3])
     #print phone_num
     return phone_num
 
-
+"""
 def phone_call_time_max(phone_num):
-    """put the longest duration call's phone number and duration put it into phone_call_time_max list.
+    put the longest duration call's phone number and duration put it into phone_call_time_max list.
 
     input: dic. phone number and duration
     phone_call_time_max: list, include the longest duration call's phone numbers and value
                of course maybe there are more than two calls have the same longest duration, considered also
-    """
+    
     phone_call_time_max = [0,0]
     maxnum = 0
     #print phone_num
@@ -65,14 +65,12 @@ def phone_call_time_max(phone_num):
             phone_call_time_max[0] = element 
             phone_call_time_max[1] = maxnum 
             #phone number location is 0, duration is 1         
-        elif phone_num[element] == maxnum:
-            phone_call_time_max.insert(0,element)
-            #if there are more than two longest duration, list phone number firstly
-    if len(phone_call_time_max) == 2:
-        print "{} spent the longest time, {} seconds, on the phone during September 2016.".format(phone_call_time_max[0], phone_call_time_max[-1])       
-    else:
-        for i in range(len(phone_call_time_max)):
-            print "{} spent the longest time, {} seconds, on the phone during September 2016.".format(phone_call_time_max[i], phone_call_time_max[-1])        
+    print "{} spent the longest time, {} seconds, on the phone during September 2016.".format(phone_call_time_max[0], phone_call_time_max[-1])              
     return phone_call_time_max 
 
 phone_call_time_max(collect_phone_number(calls))
+"""
+
+phone_num = collect_phone_number(calls)
+key,value = max(phone_num.items(), key=lambda x:x[1])
+print "{} spent the longest time, {} seconds, on the phone during September 2016.".format(key, value)
