@@ -48,10 +48,11 @@ def telemarketers_call_collect(input, input1):
     for element in input:
         if (element[0] in call_sender):
             call_sender[element[0]] += 1
-            call_receiver.append(element[1])
+            #call_receiver.append(element[1])
         else:
             call_sender[element[0]] = 1
-            call_receiver.append(element[1])
+            #call_receiver.append(element[1])
+        call_receiver.append(element[1])
 
     call_receiver_set = set(call_receiver)
     # Above is the step 1 and step 2
@@ -76,16 +77,20 @@ def telemarketers_call_collect(input, input1):
         else:
             telemarketers_call_collect[phone] = call_sender[phone]
             sum += call_sender[phone]
+            telemarketers_call_collect_list.append(phone)
             #print "phone {} not in the msg and call receive set".format(phone)
     ave = sum/len(telemarketers_call_collect) 
+    telemarketers_call_collect_list.sort()
     # Above is step 4
-    
+    """
     for element in telemarketers_call_collect:
         if telemarketers_call_collect[element] >= ave:
             telemarketers_call_collect_list.append(element)
     telemarketers_call_collect_list.sort()
     # above is step 5
     #print telemarketers_call_collect_list
+    """
+    
     print ("These numbers could be telemarketers:")
     print '\n'.join(telemarketers_call_collect_list) 
     return (telemarketers_call_collect_list)
