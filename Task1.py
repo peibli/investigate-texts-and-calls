@@ -39,7 +39,7 @@ phone_texts_calls = texts + calls
 
 phone = remove_duplecates(collect_phone_number(phone_texts_calls))
 
-print "There are {} different telephone numbers in the records.".format(len(phone))
+print ("There are {} different telephone numbers in the records.".format(len(phone)))
 
 """
 def phone_num_count(phone_nums):
