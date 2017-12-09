@@ -92,7 +92,7 @@ def telemarketers_call_collect(input, input1):
     """
     
     print ("These numbers could be telemarketers:")
-    print '\n'.join(telemarketers_call_collect_list) 
+    print ('\n'.join(telemarketers_call_collect_list)) 
     return (telemarketers_call_collect_list)
 
 telemarketers_call_collect(calls, texts)
